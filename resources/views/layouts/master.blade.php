@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   
 </head>
-<body class="hold-transition sidebar-mini layout-boxed">
+<body class="hold-transition sidebar-mini " >
 <!-- Site wrapper -->
-<div class="wrapper">
+<div class="wrapper" id="app">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -166,43 +166,55 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <router-link to="/dashboard" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt blue"></i>
               <p>
-                Dashboard
-               
+                Dashboard               
               </p>
-            </a>
+            </router-link>
             
           </li>
-          <li class="nav-item ">
+          <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
+              <i class="nav-icon fas fa-cog green"></i>
               <p>
                 Management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            
-          </li>
-          <li class="nav-item ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-alt"></i>
-              <p>
-                Profile
+            <ul class="nav nav-treeview">
+              <li class="nav-item active">
+                <router-link to="/users" class="nav-link">
+                  <i class="fas fa-users nav-icon pink"></i>
+                  <p>Users</p>
+                </router-link>
+              </li>        
               
-              </p>
-            </a>
+            </ul>             
             
           </li>
           <li class="nav-item ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
+            <router-link to="/profile" class="nav-link">
+              <i class="nav-icon fas fa-user-alt orange"></i>
               <p>
-                Logout
-                
+                Profile              
+              </p>
+            </router-link>
+            
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+              <i class="nav-icon fas fa-power-off red"></i>
+              <p>
+                {{ __('Logout') }}
               </p>
             </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             
           </li>
           
@@ -218,8 +230,14 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     
-
     <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+      <router-view></router-view>
+      </div>
+    
+    </div>
+       
     
     <!-- /.content -->
   </div>
