@@ -10,9 +10,11 @@ window.Vue = require('vue');
 import { Form, HasError, AlertError } from 'vform' //this is for back end validation using vform
 import moment from 'moment'   //this is for readable date
 import VueProgressBar from 'vue-progressbar'
+import { saveAs } from 'file-saver'
+
 
 window.Fire = new Vue();
-
+window.FileSaver = saveAs;
 
 /**sweet alert2 start */
 import Swal from 'sweetalert2'
@@ -53,6 +55,10 @@ let routes = [
     { 
         path: '/users', 
         component: require('./components/Users.vue').default
+    },
+    { 
+        path: '/coding', 
+        component: require('./components/codeEditor.vue').default
     }
   ]
 
@@ -60,6 +66,25 @@ let routes = [
     mode: 'history',
     routes // short for `routes: routes`
   })
+
+
+
+  //vue-codemirror
+  import VueCodemirror from 'vue-codemirror'
+  import 'codemirror/lib/codemirror.css'
+  // language js
+  import 'codemirror/mode/clike/clike.js'
+  // theme css
+  import 'codemirror/theme/base16-dark.css'
+  // more codemirror resources
+  // import 'codemirror/some-resource...'
+
+  const cm_options = { 
+    theme: 'base16-dark',
+    events: ['scroll','change'],
+  }
+  Vue.use(VueCodemirror,cm_options)
+
 
   const options = {
     color: 'rgb(143, 255, 199)',
@@ -75,7 +100,7 @@ let routes = [
     inverse: false
   }  
   Vue.use(VueProgressBar, options)
-
+//end progress bar
 
 
   Vue.filter('upText', function(text){

@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My APP | Boxed Layout</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
   
 </head>
 <body class="hold-transition sidebar-mini " >
@@ -202,6 +202,17 @@
             </router-link>
             
           </li>
+
+          <li class="nav-item ">
+            <router-link to="/coding" class="nav-link">
+              <i class="nav-icon fas fa-user-alt orange"></i>
+              <p>
+                Coding              
+              </p>
+            </router-link>
+            
+          </li>
+
           <li class="nav-item ">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
