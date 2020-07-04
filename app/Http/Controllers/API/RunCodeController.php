@@ -11,17 +11,26 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class RunCodeController extends Controller
 {
     //    
-    public function runCode(Request $request){
-/*
-        $process = new Process('C:\Users\Julz\Desktop\test\test.exe');
-        $process->run();
+    public function runCode(){
 
-        // executes after the command finishes
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
-        }
+ /*        //$input = new InputStream();
+        $process = new Process(['cmd','sample.exe']);
 
-        echo $process->getOutput();   
-*/
+        try {
+            $process->mustRun();
+
+            echo $process->getOutput();
+        } catch (ProcessFailedException $exception) {
+            echo $exception->getMessage();
+        }   
+  */
+
+       $output = array();
+       system('simple_batch_file',$output);
+       //exec('notepad.exe');
+        //return $output;
+       //return exec('whoami');
+
+
     }   
 }

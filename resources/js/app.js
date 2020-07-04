@@ -12,7 +12,6 @@ import moment from 'moment'   //this is for readable date
 import VueProgressBar from 'vue-progressbar'
 import { saveAs } from 'file-saver'
 
-
 window.Fire = new Vue();
 window.FileSaver = saveAs;
 
@@ -40,7 +39,6 @@ Vue.component(AlertError.name, AlertError)
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-
 let routes = [
     { 
         path: '/dashboard', 
@@ -56,10 +54,7 @@ let routes = [
         path: '/users', 
         component: require('./components/Users.vue').default
     },
-    { 
-        path: '/coding', 
-        component: require('./components/codeEditor.vue').default
-    }
+    
   ]
 
   const router = new VueRouter({
@@ -67,23 +62,6 @@ let routes = [
     routes // short for `routes: routes`
   })
 
-
-
-  //vue-codemirror
-  import VueCodemirror from 'vue-codemirror'
-  import 'codemirror/lib/codemirror.css'
-  // language js
-  import 'codemirror/mode/clike/clike.js'
-  // theme css
-  import 'codemirror/theme/base16-dark.css'
-  // more codemirror resources
-  // import 'codemirror/some-resource...'
-
-  const cm_options = { 
-    theme: 'base16-dark',
-    events: ['scroll','change'],
-  }
-  Vue.use(VueCodemirror,cm_options)
 
 
   const options = {
@@ -123,7 +101,6 @@ let routes = [
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

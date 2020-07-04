@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My APP | Boxed Layout</title>
+  <title>Admin Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  
 
   
 </head>
@@ -27,19 +28,10 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+    
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+   
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -203,15 +195,6 @@
             
           </li>
 
-          <li class="nav-item ">
-            <router-link to="/coding" class="nav-link">
-              <i class="nav-icon fas fa-user-alt orange"></i>
-              <p>
-                Coding              
-              </p>
-            </router-link>
-            
-          </li>
 
           <li class="nav-item ">
             <a class="nav-link" href="{{ route('logout') }}"
@@ -255,14 +238,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.5
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer>
-
+  
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->

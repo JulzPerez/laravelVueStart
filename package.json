@@ -29,10 +29,14 @@
         "file-saver": "^2.0.2",
         "highlight.js": "^10.0.3",
         "moment": "^2.26.0",
+        "startbootstrap-heroic-features": "^4.2.2",
         "sweetalert2": "^9.14.3",
         "vform": "^1.0.1",
         "vue-codemirror": "^4.0.6",
+        "vue-command": "^13.5.3",
         "vue-progressbar": "^0.7.5",
-        "vue-router": "^3.3.2"
+        "vue-router": "^3.3.2",
+        "vue-term": "^0.1.2",
+        "xterm": "^4.7.0"
     }
 }
